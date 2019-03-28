@@ -1,0 +1,188 @@
+//container
+
+@mixin container-properties {
+    max-width: $container-size;
+    margin: $container-margin;
+}
+
+//fake hr lines
+
+@mixin hr-white{
+    width: 64px;
+    height: 2px;
+    border: 0;
+    background-color: $white;
+}
+
+@mixin hr-orange{
+    width: 64px;
+    height: 2px;
+    border: 0;
+    background-color: $orange;
+}
+
+//icons
+
+@mixin icon-style{
+    color: $orange;
+    border: solid 2px $orange;
+    border-radius: 50%;
+}
+
+@mixin image-shadow{
+    box-shadow: 0px 10px 37px -8px rgba(0,0,0,0.7);
+}
+
+//fonts
+
+@mixin btn-font{
+    font-family: $opensans;
+    font-size: $btn-font-size;
+    font-weight: $semibold;
+    text-align: center;
+    color: $white;
+    text-decoration: none;
+}
+
+@mixin nav-font{
+    font-family: $opensans;
+    font-size: $p;
+    font-weight: $semibold;
+    color: $white;
+    text-decoration: none;
+}
+
+@mixin h1-font{
+    font-size: $h1;
+    font-family: $raleway;
+    font-weight: $light;
+    color: $white;
+}
+
+@mixin showcase-p{
+    font-size: $p-large;
+    font-family: $raleway;
+    font-weight: $light;
+    color: $white;
+    line-height: 1.4375;
+}
+
+@mixin h3-font-style{
+    font-family: $opensans;
+    font-size: $h3;
+    font-weight: $bold;
+    color: $dark-grey;
+}
+
+@mixin main-p-font{
+    font-family: $opensans;
+    font-size: $p;
+    font-weight: $light;
+    line-height: 1.25;
+    color: $mid-grey;
+}
+
+@mixin process-font{
+    font-size: $h1;
+    font-family: $raleway;
+    font-weight: $light;
+}
+
+@mixin h4-title-font{
+    font-family: $opensans;
+    font-size: $p;
+    font-weight: $semibold;
+    color: $h4-title;
+}
+
+@mixin tab-font{
+    color: $white;
+    font-family: $opensans;
+    font-size: $p;
+    font-weight: $bold;
+}
+
+@mixin pricing-title-font{
+    font-family: $opensans;
+    font-size: $h3;
+    font-weight: $bold;
+    color: $white;
+}
+
+@mixin price-font{
+    font-family: $raleway;
+    font-size: 40px;
+    font-weight: $bold;
+}
+
+@mixin p-under-price-font{
+    color: $mid-grey;
+    font-family: $opensans;
+    font-style: italic;
+    font-weight: $semibold;
+    font-size: $p;
+}
+
+@mixin popular-font{
+    color: $white;
+    font-family: $opensans;
+    font-weight: $bold;
+    font-size: $p;
+}
+
+@mixin client-font{
+    color: $mid-grey;
+    font-family: $opensans;
+    font-weight: $light;
+    font-size: $p;
+    font-style: italic;
+}
+
+@mixin custom-p-font{
+    font-family: $opensans;
+    font-size: $p-large;
+    font-weight: $light;
+    color: $white;
+}
+
+@mixin form-input-font{
+    font-family: $opensans;
+    font-size: $p;
+    font-weight: $light;
+    color: $light-grey;
+}
+
+@mixin footer-font{
+    font-family: $opensans;
+    font-size: $footer;
+    font-weight: $light;
+    color: $white;
+}
+
+//Styles
+
+@mixin showcase-form-input-style{
+    margin: 15px 30px;
+    padding-left: 15px;
+    @include textarea-style;
+}
+
+@mixin contact-form-input-style{
+    margin: 15px 0px;
+    padding-left: 15px;
+    @include textarea-style;
+}
+
+@mixin textarea-style{
+    outline: none;
+    border: none;
+    border-bottom: solid 1px $light-grey;
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }
