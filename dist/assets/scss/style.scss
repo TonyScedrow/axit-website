@@ -1,0 +1,864 @@
+@import '_variables';
+@import 'reset';
+@import 'mixins';
+
+//<-- CONTAINERS, BUTTONS, HR LINES, ICONS AND EXTRAS --!>
+
+//CONTAINERS
+.nav-header-container{
+    @include container-properties;
+    display: flex;
+    justify-content: space-between;
+
+    .brand{
+        padding: 30px 0 20px 0;
+    }
+}
+
+.container{
+    @include container-properties;
+    min-height: 200px;
+}
+
+.footer-container{
+    @include container-properties;
+    padding: 21px 0 15px 0;
+    text-align: center;
+}
+
+//BUTTONS
+.showcase-btn-download{
+    @include btn-font;
+    box-sizing: border-box;
+    width: 26%;
+    border: 2px solid $white;
+    padding: 13px 0;
+    background-color: rgba(0, 0, 0, 0.0);
+
+    a{
+        color: $white;
+        text-decoration: none;
+    }
+
+    @include transition(background-color .3s ease);
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.btn-form{
+    @include btn-font;
+
+    width: 100%;
+    background-color: #ff9b51;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 20px 0;
+
+    @include transition(background-color .3s ease);
+    &:hover{
+        background-color: darken($color: #ff9b51, $amount: 10%);
+    }
+}
+
+.feature-btn{
+    padding-top: 65px;
+}
+
+.feature-btn-download{
+    @include btn-font;
+    background-color: $orange;
+    box-shadow: 0 4px 2px -2px #cfcfcf;
+    border-radius: 3px;
+    padding:15px 24px;
+
+    @include transition(background-color .3s ease);
+    &:hover{
+        background-color: darken($color: $orange, $amount: 10%)
+    }
+}
+
+.custom-btn-download{
+    @include btn-font;
+    border: 2px solid $white;
+    padding: 13px 31px;
+    background-color: rgba(0, 0, 0, 0.0);
+
+    @include transition(background-color .3s ease);
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+//FAKE HR LINES
+.hr-white{
+    @include hr-white;
+}
+
+.hr-white-center{
+    @include hr-white;
+    margin: $container-margin;
+}
+
+.hr-orange{
+    @include hr-orange;
+}
+
+.hr-orange-center{
+    @include hr-orange;
+    margin: $container-margin;
+}
+
+//ICONS
+.feature-icon{
+    @include icon-style;
+    padding:10px 8px;
+}
+
+.process-icon{
+    @include icon-style;
+    padding:18px 23px;
+}
+
+.social-media-icons{
+    width:90%;
+    padding: 30px 0;
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.media-icon{
+    margin-left:45px;
+    color: #ccc;
+
+    @include transition(color .3s ease);
+    &:hover{
+        color: darken($color: #ccc, $amount: 20%);
+    }
+}
+
+.footer-media-icons{
+
+    a{
+        text-decoration: none;
+    }
+}
+
+.footer-media-icon{
+    padding: 0 15px;
+    color: #ccc;
+
+    @include transition(color .3s ease);
+    &:hover{
+        color: lighten($color: #ccc, $amount: 20%);
+    }
+}
+
+
+//EXTRAS
+.feature-image-shadow{
+    @include image-shadow;
+}
+
+.extra-padding-top{
+    padding-top:30px;
+}
+
+.extra-padding-left-right{
+    padding:0px 30px;
+}
+
+.tint{
+    background-color: $tint;
+}
+
+//<-- ALL OF THE SECTIONS --!>
+
+//HEADER NAV AND SHOWCASE
+header{
+    position: fixed;
+    width: 100%;
+    background-color: $header-color;
+    z-index:2;
+}
+
+nav{
+    padding: 30px 0 20px 0;
+
+    li{
+        display: inline;
+        margin-left: 48px;
+    }
+
+    a{
+        @include nav-font;
+        opacity: 0.69;
+
+        &:hover{
+            opacity: 1;
+        }
+        &#openup{
+            display: none;
+        }
+    }
+
+    .current a{
+        opacity: 1;
+    }
+
+}
+
+#showcase{
+    background: $background-darken, $showcase-image;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+//LEFT AND RIGHT parts of showcase (text and form)
+
+//left (text)
+.left{
+    width: 47.27%;
+    margin-top: 190px;
+    margin-bottom: 140px;
+
+    img{
+        height: 59px;
+        padding-bottom: 33px;
+    }
+
+    h1{
+        @include h1-font;
+        padding-bottom: 40px;
+    }
+
+    p{
+        @include showcase-p;
+        opacity: 0.8;
+        padding: 40px 0 44px 0;
+    }
+}
+
+
+//right (form)
+.right{
+    width: 32.72%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 205px;
+    margin-right: 15px;
+}
+
+.form-name{
+    @include h3-font-style;
+    width: 100%;
+    background-color: $tint;
+    text-align: center;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 10px 0;
+}
+
+.highlight{
+    color: $orange;
+}
+
+.header-form{
+    background-color: $white;
+}
+
+.header-input{
+    @include form-input-font;
+    @include showcase-form-input-style;
+    width: 75%;
+    height: 45px;
+}
+
+input::placeholder{
+    color: $light-grey;
+}
+
+
+//SOCIAL MEDIA SECTION
+
+//social media main section
+.social{
+    padding: 20px 0;
+
+    h3{
+        @include h3-font-style;
+        padding-bottom: 3px;
+    }
+
+    p{
+        @include main-p-font;
+    }
+}
+
+//social media section shadow
+.shadow{
+    box-shadow: inset 0 5px 9px -7px rgba(0,0,0,0.7);
+}
+
+//FEATURES SECTION
+
+.feature{
+    display:flex;
+    padding: 110px 0 130px 0;
+}
+
+.tabs{
+    padding-right:150px;
+}
+
+.tab{
+    @include tab-font;
+    width:100%;
+    background-color: $dark-grey;
+    text-align: center;
+    padding:50px 30px;
+    border-radius: 5px;
+    margin-bottom: 1px;
+    box-shadow: 0 4px 2px -2px #cfcfcf;
+
+    @include transition(background-color .3s ease);
+    &:hover{
+        background-color: $orange;
+        cursor: pointer;
+    }
+}
+
+.tab-current{
+    background-color: $orange;
+}
+
+.feature-title{
+    @include h3-font-style;
+    padding-bottom: 25px;
+}
+
+.feature-text{
+    @include main-p-font;
+    width: 85%;
+    margin-top: 25px;
+}
+
+.sub-list{
+    padding-left: 150px;
+}
+
+.subs{
+    padding-top: 42px;
+    display: flex;
+}
+
+.title-box{
+    padding-left: 30px; 
+
+    h4{
+        @include h4-title-font;
+    }
+
+    p{
+        @include main-p-font;
+    }
+}
+
+//PROCESS SECTION
+
+.process{
+    text-align:center;
+    padding-top: 100px;
+
+    h2{
+        @include process-font;
+        padding-bottom:30px;
+    }
+}
+
+.boxes{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.box{
+    text-align:center;
+}
+
+.box-text{
+    @include main-p-font;
+}
+
+//PRICING SECTION
+
+.pricing-boxes{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.table-box{
+    width: 31%;
+    text-align: center;
+}
+
+.pricing-title {
+    @include pricing-title-font;
+    background-color: $dark-grey;
+    margin: $container-margin;
+    padding: 21px;
+    margin-bottom: 1px;
+}
+
+.price-box{
+    background-color: $dark-grey;
+    color: $white;
+    padding-bottom:25px;
+
+    h2{
+        @include price-font;
+
+        span{
+            font-size: 94px;
+        }
+
+    }
+
+    p{
+        @include p-under-price-font;
+        padding-top: 5px;
+    }
+
+}
+
+.price-underline{
+    height:5px;
+    background-color: $orange;
+}
+
+.benefits-text{
+    @include main-p-font;
+    background-color: $white;
+    padding: 14px 0;
+    margin-top: 1px;
+}
+
+.popular{
+    @include popular-font;
+    background-color: $orange;
+    padding: 15px;
+}
+
+//CLIENT FEEDBACK SECTION
+
+.client-boxes{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 55px 0 100px 0;
+}
+
+.client-box{
+    width: 25%;
+    display: none;
+
+    &.active{
+        display: block;
+    }
+}
+
+.client-text{
+    @include client-font;
+    position: relative;
+    background-color: $tint;
+    border-radius: 5px;
+    padding: 23px 12px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border: 14px solid transparent;
+        border-top-color: $tint;
+        border-bottom: 0;
+        margin-left: -45%;
+        margin-bottom: -14px;
+    }
+}
+
+.client{
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+}
+
+.client-name{
+    margin-left: 15px;
+
+    h3{
+        @include h3-font-style;
+    }
+
+    p{
+        @include main-p-font;
+    }
+}
+
+//CUSTOM SECTION
+
+#custom{
+    min-height: 320px;
+    background: $background-darken, $custom-section-image;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.custom-section{
+    text-align: center;
+    padding-top: 75px;
+    padding-bottom: 63px;
+
+    h2{
+        @include process-font;
+        color: $white;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+
+    p{
+        @include custom-p-font;
+        padding: 33px 0 50px 0;
+    }
+}
+
+//CONTACT FORM SECTION
+
+.form{
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 0 45px 0;
+}
+
+.inputs{
+    width:45.6%;
+}
+
+.customer-input{
+    @include form-input-font;
+    @include contact-form-input-style;
+    width: 100%;
+    height: 40px;
+}
+
+.customer-message-box{
+    @include form-input-font;
+    padding:8px 0 0 20px;
+    width: 47%;
+
+    textarea{
+        @include form-input-font;
+        @include textarea-style;
+        box-sizing: border-box;
+        padding: 20px 0 0 15px;
+        width: 100%;
+        height: 191px;
+        resize: none;
+
+        &::placeholder{
+            color: $light-grey;
+        }
+    }
+
+}
+
+.center{
+    text-align: center;
+}
+
+div.center{
+    padding-bottom: 95px;
+}
+
+//FOOTER
+
+footer{
+    @include footer-font;
+    background-color: $header-color;
+
+    p{
+        padding-top: 15px;
+        opacity: 0.5;
+    }
+}
+
+
+@media screen and (max-width: 1200px){
+    .nav-header-container{
+        width: 90%;
+    }
+
+    .left{
+        width: 50%;
+
+        .hr-white{
+            display: none;
+        }
+
+        p{
+            display: none;
+        }
+
+        .showcase-btn-download{
+            width: 190px;
+        }
+    }
+
+    .right{
+        width: 330px;
+    }
+
+    .container{
+        width: 90%;
+    }
+
+    .nav-header-container.social-media{
+        flex-direction: column;
+    }
+
+    .social{
+        width: 100%;
+        text-align:center;
+    }
+
+    .social-media-icons{
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 10px;
+    }
+
+    .media-icon{
+        margin: 0 20px;
+    }
+
+    .tabs{
+        padding-right: 50px;
+    }
+
+    .tab{
+        width: 50px;
+    }
+
+    .feature-image{
+        img{
+            width:250px;
+        }
+    }
+
+    .sub-list{
+        padding-left: 10%;
+    }
+
+    .client-box{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+        nav li {
+          margin-left: 10px;
+        }
+  
+        .left{
+            width: 100%;
+            text-align:center;
+  
+            .showcase-btn-download{
+              width: 70%;
+              margin: 0 auto;
+          }
+        }
+  
+        .right{
+            display: none;
+        }
+  
+        .media-icon{
+            font-size: 2rem;
+            margin: 0 10px;
+        }
+  
+        .feature{
+            padding: 60px 0;
+            width: 100%;
+            text-align: center;
+            flex-direction: column;
+        }
+  
+        .feature-text{
+            width: 100%;
+        }
+        
+        .feature-image{
+          padding: 50px 0;
+        }
+  
+        .tabs{
+            padding-right: 0px;
+            width: 70%;
+            padding-bottom: 50px;
+            padding-top: 60px;
+            margin: 0 auto;
+        }
+  
+        .tab{
+            width: 100%;
+            padding: 10px 0;
+        }
+  
+        .sub-list{
+          padding-left: 0px;
+      }
+  
+      .subs{
+          flex-direction: column;
+      }
+  
+      .title-box{
+          padding-top: 20px;
+          padding-left: 0px;
+      }
+  
+      .hr-orange{
+          margin: $container-margin;
+      }
+  
+      .boxes{
+          flex-direction: column;
+      }
+  
+      .box{
+          padding-bottom: 50px;
+      }
+  
+      .pricing-boxes{
+          flex-direction: column;
+      }
+  
+      .table-box{
+          width: 70%;
+          padding-bottom: 50px;
+          margin: 0 auto;
+      }
+  
+      .client-box{
+          width: 60%;
+      }
+  
+      .form{
+          width: 70%;
+          flex-direction: column;
+          margin: 0 auto;
+      }
+  
+      .inputs{
+          width:100%;
+      }
+      
+      .customer-input{
+          @include form-input-font;
+          @include contact-form-input-style;
+          width: 100%;
+          height: 40px;
+          padding-left: 0;
+      }
+  
+      .customer-message-box{
+          width:100%;
+          padding: 0;
+          margin-top: 20px;
+  
+          textarea{
+              padding: 0;
+          }
+      }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+
+    nav a#open-burger:after {
+      content: "|||";
+      transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      width: 30px;
+      height: 30px;
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 27px;
+    }
+
+    nav {
+        height: auto;
+      }
+      nav ul {
+        display: none;
+        height: auto;
+      }
+      
+      nav li {
+        width: 100%;
+        float: left;
+        position: relative;
+      }
+
+      .left{
+
+          .showcase-btn-download{
+            width: 100%;
+        }
+      }
+
+      .tabs{
+          width: 100%;
+      }
+
+      .tab{
+          width: 100%;
+      }
+
+    .table-box{
+        width: 100%;
+    }
+
+    .form{
+        width: 100%;
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
